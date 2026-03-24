@@ -1,0 +1,17 @@
+{
+  "name": "sceneweaver-3d-studio",
+  "version": "1.0.0",
+  "description": "SceneWeaver 3D Studio is an image-and-video-to-3D simulation project. It accepts a single image or a video clip, runs server-side computer-vision analysis, and generates an interactive pseudo-3D point-cloud scene you can orbit, zoom, animate, and export.",
+  "main": "index.js",
+  "scripts": {
+    "start": "python server/app.py",
+    "preload:midas": "python server/preload_midas.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.183.2"
+  }
+}

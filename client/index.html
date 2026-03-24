@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SceneWeaver 3D Studio</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">Image / Video To 3D</p>
+          <h1>SceneWeaver 3D Studio</h1>
+          <p class="lede">
+            Turn a flat image or sampled video frames into an interactive pseudo-3D simulation scene.
+            Orbit, zoom, animate, and export what you generate.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <article><span>Inputs</span><strong>Images + Videos</strong></article>
+          <article><span>Output</span><strong>Point Cloud Scene</strong></article>
+          <article><span>Export</span><strong>Scene Metadata</strong></article>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="control-panel">
+          <div class="panel-card">
+            <h2>Source</h2>
+            <input id="file-input" type="file" accept="image/*,video/*" />
+            <input id="scene-title" type="text" placeholder="Scene title" />
+            <button id="build-scene">Build 3D Scene</button>
+            <p class="muted" id="build-status">Load an image or video to begin.</p>
+          </div>
+
+          <div class="panel-card">
+            <h2>Reconstruction</h2>
+            <label>Depth Mode
+              <select id="depth-mode">
+                <option value="auto">Auto</option>
+                <option value="midas">MiDaS</option>
+                <option value="heuristic">Heuristic</option>
+              </select>
+            </label>
+            <label>Density <input id="density" type="range" min="4" max="18" value="8" /></label>
+            <label>Depth Strength <input id="depth-strength" type="range" min="20" max="180" value="90" /></label>
+            <label>Point Size <input id="point-size" type="range" min="1" max="6" value="2" /></label>
+            <label>Video Layers <input id="video-layers" type="range" min="3" max="10" value="6" /></label>
+            <label>Layer Offset <input id="layer-offset" type="range" min="10" max="90" value="30" /></label>
+          </div>
+
+          <div class="panel-card">
+            <h2>Simulation</h2>
+            <button id="toggle-spin">Toggle Auto Rotate</button>
+            <button id="reset-camera">Reset Camera</button>
+            <button id="export-scene">Export Scene</button>
+            <button id="refresh-scenes">Refresh Saved Scenes</button>
+          </div>
+
+          <div class="panel-card">
+            <h2>Saved Scenes</h2>
+            <div id="saved-scenes" class="saved-scenes"></div>
+          </div>
+        </aside>
+
+        <section class="viewer-panel">
+          <div class="viewer-toolbar">
+            <span>Drag to orbit</span>
+            <span>Wheel to zoom</span>
+            <span id="scene-meta">No scene loaded</span>
+          </div>
+          <div id="scene-canvas" class="webgl-stage"></div>
+          <div class="source-preview">
+            <h3>Source Preview</h3>
+            <canvas id="preview-canvas" width="320" height="180"></canvas>
+          </div>
+          <div class="analysis-grid" id="analysis-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
