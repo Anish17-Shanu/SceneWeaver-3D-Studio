@@ -8,7 +8,7 @@
     "preload:midas": "python server/preload_midas.py"
   },
   "keywords": [],
-  "author": "Anish Kumar",
+  "author": "ANISH KUMAR",
   "license": "ISC",
   "type": "module",
   "dependencies": {

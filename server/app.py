@@ -1,4 +1,4 @@
-"""SceneWeaver 3D Studio server created by Anish Kumar."""
+"""SceneWeaver 3D Studio server created by ANISH KUMAR."""
 
 from __future__ import annotations
 
