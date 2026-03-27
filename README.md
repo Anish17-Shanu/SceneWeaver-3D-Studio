@@ -2,8 +2,8 @@
 
 ## Creator
 
-This project was created, written, and maintained by **ANISH KUMAR**.
-All primary documentation in this README is presented as the work of **ANISH KUMAR**.
+This project was created, written, and maintained by **Anish Kumar**.
+All primary documentation in this README is presented as the work of **Anish Kumar**.
 
 SceneWeaver 3D Studio is an image-and-video-to-3D simulation project. It accepts a single image or a video clip, runs server-side computer-vision analysis, and generates an interactive pseudo-3D point-cloud scene you can orbit, zoom, animate, and export.
 
